@@ -1,8 +1,60 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+html,body {
+    font-family: mono;
+    font-size: $font-size-base;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#app {
+    margin: 2rem auto 2rem auto;
+    border: solid black 1px;
+    width: 30rem;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#summary{
+    margin: 0;
+    padding: 1rem;
+    background-color: $blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 20rem;
+}
+
+#summary h2, #summary p {
+    margin: 0;
+    padding: 0;
+}
+
+#location {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#location input {
+    width: 21rem;
+}
+
+#location button {
+    margin-top: 0.2rem;
+}

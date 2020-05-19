@@ -13,9 +13,9 @@
 
     </head>
     <body>
-        <h1>Laravel/Vue Weather App</h1>
         <div id="app">
-            <example-component></example-component>
+            <h1>Laravel/Vue Weather App</h1>
+            <weather-app></weather-app>
         </div>
     </body>
 </html>
