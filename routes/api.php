@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// TODO: add middleware to whitelist ip either of localhost or wherever this is hosted
 Route::get('/weather', function () {
     $lat = request('lat'); 
     $lon = request('lon');
@@ -27,5 +28,4 @@ Route::get('/weather', function () {
     $url .= "&appid=$api_key";
     $response = Zttp::get($url);
     return $response->json();
-
 });

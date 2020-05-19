@@ -121,7 +121,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       lat: "",
-      lon: ""
+      lon: "",
+      name: "",
+      temp: "",
+      description: "",
+      humidity: "",
+      icon_url: ""
     };
   },
   methods: {
@@ -145,8 +150,22 @@ __webpack_require__.r(__webpack_exports__);
       vm.showWeather();
     },
     showWeather: function showWeather() {
-      fetch("/api/weather?lat=".concat(this.lat, "&lon=").concat(this.lon)).then(function (r) {
-        return console.log(r);
+      var vm = this;
+      fetch("/api/weather?lat=".concat(vm.lat, "&lon=").concat(vm.lon)).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        console.log(data);
+
+        if (!data.name) {
+          vm.name = "".concat(data.coord.lat, ", ").concat(data.coord.lon);
+        } else {
+          vm.name = "".concat(data.name, " (").concat(data.sys.country, ")");
+        }
+
+        vm.description = data.weather[0].description;
+        vm.humidity = data.main.humidity;
+        vm.temp = data.main.temp;
+        vm.icon_url = "https://openweathermap.org/img/wn/".concat(data.weather[0].icon, "@2x.png");
       });
     }
   }
@@ -638,7 +657,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "weather" } }, [
-    _vm._m(0),
+    _c("div", { attrs: { id: "summary" } }, [
+      _c("div", [
+        _c("h2", [_vm._v(_vm._s(_vm.name))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.description))]),
+        _vm._v(" "),
+        _c("p", [_vm._v("humidity: " + _vm._s(_vm.humidity))])
+      ]),
+      _vm._v(" "),
+      _c("img", { attrs: { src: _vm.icon_url } })
+    ]),
     _vm._v(" "),
     _c("div", { attrs: { id: "location" } }, [
       _c("button", { on: { click: _vm.locationFromBrowser } }, [
@@ -649,26 +678,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "summary" } }, [
-      _c("div", [
-        _c("h2", [_vm._v("London, 26°C")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("broken clouds")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("humidity: 62")])
-      ]),
-      _vm._v(" "),
-      _c("img", {
-        attrs: { src: "http://openweathermap.org/img/wn/04d@2x.png" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
