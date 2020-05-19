@@ -93,7 +93,7 @@ However, having a laravel backend provides one current advantage and several pot
 And so on.
 
 
-## Further developemt
+## Further development 
 
 If I take this app any further beyond mere demonstration purposes, I'd first like to make the ui a lot less ugly. I'd also like to look into providing weather data for multiple locations / days simultaneously.
 
