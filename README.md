@@ -7,3 +7,9 @@
 [OpenWeatherMap](https://openweathermap.org/current)
 
 api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key}
+
+api key must be added to .env
+
+e.g.
+
+OWM_KEY={your api key}
