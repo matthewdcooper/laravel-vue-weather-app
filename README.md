@@ -79,7 +79,7 @@ yields:
 
 ## Why have an intemediary?
 
-As the app currently function there isn't really much need for one. A simple Vue client would, in fact, suffice.
+As the app currently functions there isn't really much need for one. A simple Vue client would, in fact, suffice.
 
 However, having a laravel backend provides one current advantage and several potential advatages if this app were to built upon.
 
