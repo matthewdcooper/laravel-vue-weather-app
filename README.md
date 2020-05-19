@@ -2,6 +2,8 @@
 
 > A quick demonstration of a simple weather app built with Laravel/Vue.
 
+![app screenshot](/screenshot.png?raw=true)
+
 This is a barebones weather app that uses Laravel as the backend to interface with OpenWeatherMap's api and then serves that to a (currently rather hideous) Vue frontend.
 
 The app will attempt to get the browser's location and display the current weather. Clicking 'random' will get the current weather at a random latitude/longitude, which may or may not be sufficiently close to a city with a name.
