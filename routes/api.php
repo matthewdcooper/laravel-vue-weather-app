@@ -1,5 +1,6 @@
 <?php
 
+use Zttp\Zttp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/weather', function () {
+    $lat = request('lat'); 
+    $lon = request('lon');
+    $api_key = config('services.openweathermap.key');
+    $url = "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon";
+    $url .= "&appid=$api_key";
+    $response = Zttp::get($url);
+    return $response->json();
+
 });
