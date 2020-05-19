@@ -114,9 +114,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.locationFromBrowser();
@@ -644,25 +641,11 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { attrs: { id: "location" } }, [
-      _c("input", {
-        attrs: { id: "inp_lat", type: "text", placeholder: "latitude" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { id: "inp_lon", type: "text", placeholder: "longitude" }
-      }),
-      _vm._v(" "),
       _c("button", { on: { click: _vm.locationFromBrowser } }, [
         _vm._v("from browser")
       ]),
       _vm._v(" "),
-      _c("button", { on: { click: _vm.randomLocation } }, [_vm._v("random")]),
-      _vm._v(" "),
-      _c(
-        "button",
-        { attrs: { id: "btn_show" }, on: { click: _vm.showWeather } },
-        [_vm._v("show weather")]
-      )
+      _c("button", { on: { click: _vm.randomLocation } }, [_vm._v("random")])
     ])
   ])
 }

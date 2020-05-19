@@ -10,11 +10,8 @@
         </div>
 
         <div id="location">
-            <input id="inp_lat" type="text" placeholder="latitude"></input>
-            <input id="inp_lon" type="text" placeholder="longitude"></input>
             <button v-on:click="locationFromBrowser">from browser</button>
             <button v-on:click="randomLocation">random</button>
-            <button v-on:click="showWeather" id="btn_show">show weather</button>
         </div>
     </div>
 
